@@ -10,13 +10,13 @@ if (isset($_POST["username"])) {
     if ($loginInfo) {
         if ($loginInfo["password"] == $password) {
             $_SESSION["user"] = array(
+                "id" => $loginInfo["id"],
                 "username" => $loginInfo["username"],
                 "name" => $loginInfo["name"],
             );
             header("location:/crud/");
         } else {
             echo "Your credentials are not correct";
-
         }
     } else {
         echo "Your credentials are not correct";
